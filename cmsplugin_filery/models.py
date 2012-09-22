@@ -27,6 +27,11 @@ class Filery(CMSPlugin):
     def __unicode__(self):
         return _(u'%(count)d image(s) in gallery') % {'count': self.image_set.count()}
 
+    def active_photos(self):
+        """
+        Return the active photos queryset.
+        """
+        return self.image_set.filter(active=True)
 
 
     class Meta:
