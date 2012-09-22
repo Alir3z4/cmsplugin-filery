@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import find_packages, setup
+from distutils.core import setup
 
 setup(
     name='cmsplugin_gallery_filer',
