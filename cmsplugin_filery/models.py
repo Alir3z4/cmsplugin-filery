@@ -39,5 +39,48 @@ class Filery(CMSPlugin):
         verbose_name_plural = _('fileries')
 
 
+class Image(models.Model):
+    """
+    Class that represent a image of the gallery, images have the following
+    properties:
+
+    ``image``
+        The image, thumbnail will be generated with this image (required).
+
+    ``active``
+        A boolean that allows to deactivate an image without removing it
+        completely, if set to ``False``, the image will not appear in the
+        gallery (default: True).
+
+    ``order``
+        An integer representing the order (position) of the image in the
+        gallery (default: 0).
+    """
+
+    gallery = models.ForeignKey(
+        FileryPlugin,
+        verbose_name=_("gallery")
+    )
+    image = FilerImageField(
+        verbose_name=_('image'),
+        help_text=_('Please upload a jpeg or png image'),
+        null=True,
+        blank=True
+    )
+    active = models.BooleanField(
+        _('Active'),
+        default=True,
+        help_text=_('Uncheck this to deactivate the image in the gallery '\
+                    'without removing it'))
+    order = models.IntegerField(
+        verbose_name=_('Order'),
+        blank=True,
+        null=True
+    )
 
     def __unicode__(self):
+        return self.title or str(self.pk)
+    class Meta:
+        verbose_name = _('image')
+        verbose_name_plural = _('images')
+        ordering = ('order',)
