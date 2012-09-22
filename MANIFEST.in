@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+include AUTHORS
+recursive-include cmsplugin_gallery/templates/*
