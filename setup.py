@@ -11,8 +11,7 @@ setup(
     description = 'DjangoCMS image gallery plugin with drag&drop '
                   'reordering in admin, support for thumbnails and '
                   'jQueryTOOLS overlay. Fork to use django-filer',
-    packages=find_packages(),
-    provides=['cmsplugin_gallery', ],
+    provides=['cmsplugin_gallery'],
     include_package_data=True,
     install_requires = ['django-inline-ordering>=0.1.1', 'easy-thumbnails',
                         'django-filer']
