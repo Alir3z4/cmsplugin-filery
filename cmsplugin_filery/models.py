@@ -80,6 +80,20 @@ class Image(models.Model):
 
     def __unicode__(self):
         return self.title or str(self.pk)
+
+    def title(self):
+        return u'{0}'.format(self.image.default_caption)
+
+    def caption(self):
+        # :D
+        self.title()
+
+    def alt(self):
+        return u'{0}'.format(self.image.default_alt_text)
+
+    def description(self):
+        return u'{0}'.format(self.image.description)
+
     class Meta:
         verbose_name = _('image')
         verbose_name_plural = _('images')
