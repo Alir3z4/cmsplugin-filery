@@ -3,18 +3,15 @@
 from distutils.core import setup
 
 setup(
-    name='cmsplugin_gallery_filer',
+    name='cmsplugin_filery',
     version='0.5.2',
-    author='GISA Elkartea',
-    author_email='kontaktua@gisa-elkartea.org',
-    url='http://lagunak.gisa-elkartea.org/projects/cmsplugin-gallery-filer',
-    description = 'DjangoCMS image gallery plugin with drag&drop '
-                  'reordering in admin, support for thumbnails and '
-                  'jQueryTOOLS overlay. Fork to use django-filer',
-    packages=['cmsplugin_gallery', 'cmsplugin_gallery.migrations'],
-    package_dir={'cmsplugin_gallery': 'cmsplugin_gallery'},
-    package_data={'cmsplugin_gallery': ['templates/*/*', 'locale/*/*/*']},
-    provides=['cmsplugin_gallery'],
+    author='Alireza Savand',
+    author_email='alireza.savand@gmail.com',
+    description = 'Image gallery based on django-filer',
+    packages=['cmsplugin_filery',],
+    package_dir={'cmsplugin_filery': 'cmsplugin_filery'},
+    package_data={'cmsplugin_filery': ['templates/*/*']},
+    provides=['cmsplugin_filery'],
     include_package_data=True,
     install_requires = ['django-inline-ordering>=0.1.1', 'easy-thumbnails',
                         'django-filer']

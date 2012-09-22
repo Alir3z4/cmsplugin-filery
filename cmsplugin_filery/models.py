@@ -6,12 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 from inline_ordering.models import Orderable
 from filer.fields.image import FilerImageField
 
-import utils
-
-localdata = threading.local()
-localdata.TEMPLATE_CHOICES = utils.autodiscover_templates()
-TEMPLATE_CHOICES = localdata.TEMPLATE_CHOICES
-
 
 class GalleryPlugin(CMSPlugin):
 
@@ -26,7 +20,7 @@ class GalleryPlugin(CMSPlugin):
 
     template = models.CharField(max_length=255,
                                 choices=TEMPLATE_CHOICES,
-                                default='cmsplugin_gallery/gallery.html',
+                                default='cmsplugin_filery/gallery.html',
                                 editable=len(TEMPLATE_CHOICES) > 1)
 
     def __unicode__(self):

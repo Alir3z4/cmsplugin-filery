@@ -6,12 +6,12 @@ import admin
 import models
 
 
-class CMSGalleryPlugin(CMSPluginBase):
+class CMSFileryPlugin(CMSPluginBase):
 
     model = models.GalleryPlugin
     inlines = [admin.ImageInline, ]
     name = _('Image gallery')
-    render_template = 'cmsplugin_gallery/gallery.html'
+    render_template = 'cmsplugin_filery/gallery.html'
 
     def render(self, context, instance, placeholder):
         context.update({
@@ -22,4 +22,4 @@ class CMSGalleryPlugin(CMSPluginBase):
         return context
 
 
-plugin_pool.register_plugin(CMSGalleryPlugin)
+plugin_pool.register_plugin(CMSFileryPlugin)
