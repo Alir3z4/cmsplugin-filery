@@ -8,7 +8,7 @@ from filer.fields.image import FilerImageField
 
 class Filery(CMSPlugin):
     """
-     Class that represents a photo gallery, galleries have the following
+     Class that represents a image gallery, galleries have the following
      properties:
 
     ``title``
@@ -27,9 +27,9 @@ class Filery(CMSPlugin):
     def __unicode__(self):
         return _(u'%(count)d image(s) in gallery') % {'count': self.image_set.count()}
 
-    def active_photos(self):
+    def active_images(self):
         """
-        Return the active photos queryset.
+        Return the active images queryset.
         """
         return self.image_set.filter(active=True)
 
