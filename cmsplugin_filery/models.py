@@ -79,19 +79,24 @@ class Image(models.Model):
     def __unicode__(self):
         return self.title or str(self.pk)
 
+    @property
     def title(self):
         return u'{0}'.format(self.image.default_caption)
 
+    @property
     def caption(self):
         # :D
         return self.title
 
+    @property
     def name(self):
         return u'{0}'.format(self.image.name)
 
+    @property
     def alt(self):
         return u'{0}'.format(self.image.default_alt_text)
 
+    @property
     def description(self):
         return u'{0}'.format(self.image.description)
 
