@@ -84,7 +84,7 @@ class Image(models.Model):
 
     def caption(self):
         # :D
-        self.title()
+        return self.title
 
     def name(self):
         return u'{0}'.format(self.image.name)
