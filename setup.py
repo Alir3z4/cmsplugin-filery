@@ -19,7 +19,7 @@ setup(
         'image',
         'gallery',
         ],
-    packages=['cmsplugin_filery',],
+    packages=['cmsplugin_filery', 'cmsplugin_filery.migrations'],
     package_dir={'cmsplugin_filery': 'cmsplugin_filery'},
     package_data={'cmsplugin_filery': ['templates/*/*']},
     provides=['cmsplugin_filery'],
