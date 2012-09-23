@@ -56,7 +56,7 @@ class Image(models.Model):
     """
 
     gallery = models.ForeignKey(
-        FileryPlugin,
+        Filery,
         verbose_name=_("gallery")
     )
     image = FilerImageField(
