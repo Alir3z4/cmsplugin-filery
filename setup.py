@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='cmsplugin_filery',
+    name='cmsplugin-filery',
     version=".".join(map(str, __import__('cmsplugin_filery').__version__)),
     author='Alireza Savand',
     author_email='alireza.savand@gmail.com',
