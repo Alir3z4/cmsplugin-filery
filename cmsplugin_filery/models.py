@@ -86,6 +86,9 @@ class Image(models.Model):
         # :D
         self.title()
 
+    def name(self):
+        return u'{0}'.format(self.image.name)
+
     def alt(self):
         return u'{0}'.format(self.image.default_alt_text)
 
