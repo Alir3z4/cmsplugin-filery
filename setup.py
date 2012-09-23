@@ -21,6 +21,10 @@ setup(
     package_data={'cmsplugin_filery': ['templates/*/*']},
     provides=['cmsplugin_filery'],
     include_package_data=True,
-    install_requires = ['django-inline-ordering>=0.1.1', 'easy-thumbnails',
-                        'django-filer']
+    install_requires = [
+        'django',
+        'django-cms',
+        'easy-thumbnails',
+        'django-filer'
+    ],
 )
