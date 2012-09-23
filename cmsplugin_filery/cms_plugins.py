@@ -1,15 +1,14 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
-
-import admin
-import models
+from cmsplugin_filery.models import Filery
+from cmsplugin_filery.admin import ImageInline
 
 
 class CMSFileryPlugin(CMSPluginBase):
 
-    model = models.GalleryPlugin
-    inlines = [admin.ImageInline, ]
+    model = Filery
+    inlines = [ImageInline, ]
     name = _('Image gallery')
     render_template = 'cmsplugin_filery/gallery.html'
 
