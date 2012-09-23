@@ -1,6 +1,7 @@
 *.pyc
 *.pyo
 MANIFEST
+manage.py
 *~
 
 .idea
@@ -12,5 +13,6 @@ MANIFEST
 dist
 
 build/
+django_cmsplugin_filery/
 tests/_env
 tests/_oldenv
