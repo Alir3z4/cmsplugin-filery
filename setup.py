@@ -5,7 +5,10 @@ setup(
     version=".".join(map(str, __import__('cmsplugin_filery').__version__)),
     author='Alireza Savand',
     author_email='alireza.savand@gmail.com',
+    url='http://pypi.python.org/pypi/cmsplugin-filery',
     description = 'Image gallery based on django-filer',
+    long_description=open('README.rst').read(),
+    license='LICENSE',
     keywords=[
         'django',
         'django-cms',
