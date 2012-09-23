@@ -5,20 +5,17 @@ from cmsplugin_filery.models import Filery
 from cmsplugin_filery.admin import ImageInline
 
 
-class CMSFileryPlugin(CMSPluginBase):
-
+class FileryCMSPlugin(CMSPluginBase):
     model = Filery
     inlines = [ImageInline, ]
     name = _('Image gallery')
     render_template = 'cmsplugin_filery/gallery.html'
+    raw_id_fields = ('image',)
 
     def render(self, context, instance, placeholder):
-        context.update({
-                        'images': instance.image_set.all(),
-                        'gallery': instance,
-                       })
-        self.render_template = instance.template
+        context['images'] = instance.image_set.all()
+        context['gallery'] = instance
         return context
 
 
-plugin_pool.register_plugin(CMSFileryPlugin)
+plugin_pool.register_plugin(FileryCMSPlugin)
