@@ -1,7 +1,11 @@
-=======================
+=================
 cmsplugin-filery
-=======================
+=================
 
+.. contents:: Table of contents
+
+Overview
+=========
 cmsplugin-filery adds simple & minimal image gallery for django-cms.
 And it's based on django-filer.
 
