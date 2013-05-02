@@ -32,6 +32,13 @@ class Filery(CMSPlugin):
         return self.image_set.filter(active=True)
 
 
+    def copy_relations(self, oldinstance):
+        for img in oldinstance.image_set.all():
+            new_img = Image()
+    	    new_img.gallery = self
+    	    new_img.image = img.image
+            new_img.save()
+
     class Meta:
         verbose_name = _('filery')
         verbose_name_plural = _('fileries')
@@ -104,3 +111,4 @@ class Image(models.Model):
         verbose_name = _('image')
         verbose_name_plural = _('images')
         ordering = ('order',)
+
