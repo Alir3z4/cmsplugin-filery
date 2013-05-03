@@ -33,6 +33,10 @@ class Filery(CMSPlugin):
 
 
     def copy_relations(self, oldinstance):
+        """
+         Needed for django_cms 2.4, to ensure that images are copied from draft
+        to published pages.
+        """
         for img in oldinstance.image_set.all():
             new_img = Image()
     	    new_img.gallery = self
