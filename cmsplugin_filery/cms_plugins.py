@@ -24,7 +24,7 @@ class FileryCMSPlugin(CMSPluginBase):
             loader.get_template('cmsplugin_filery/' + instance.template)
             self.render_template = 'cmsplugin_filery/' + instance.template
         except:
-            pass  # don't worry about it; default remdner_template will be used
+            pass  # don't worry about it; default render_template will be used
         
         return context
 
