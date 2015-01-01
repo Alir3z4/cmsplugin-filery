@@ -22,6 +22,13 @@ class Filery(CMSPlugin):
                     'the gallery header (optional)')
     )
 
+    template = models.CharField(
+        _('template'),
+        max_length=255,
+        blank=True,
+        help_text=_('The gallery template, ')
+    )
+
     def __unicode__(self):
         return _(u'%(count)d image(s) in gallery') % {'count': self.image_set.count()}
 
@@ -39,8 +46,8 @@ class Filery(CMSPlugin):
         """
         for img in oldinstance.image_set.all():
             new_img = Image()
-    	    new_img.gallery = self
-    	    new_img.image = img.image
+            new_img.gallery = self
+            new_img.image = img.image
             new_img.save()
 
     class Meta:

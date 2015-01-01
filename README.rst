@@ -39,6 +39,24 @@ like when you overide admin templates.
     
     templates/cmsplugin_filery/gallery.html
 
+Additionally, you can add your templates to ``templates/cmsplugin_filery/``  and register them in ``settings.py``.  
+This will make the templates available for selection in the user interface.
+
+::
+
+    # In the templates directory
+    templates/cmsplugin_filery/gallery_1.html
+    templates/cmsplugin_filery/gallery_2.html
+
+::
+
+    # In settings.py
+    CMSPLUGIN_FILERY_TEMPLATES = (
+        ('gallery_1.html', 'My First Gallery'), 
+        ('gallery_2.html', 'My Second Gallery'), 
+    )
+
+
 Bugs & Contribution
 ===================
 
